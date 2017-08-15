@@ -1,0 +1,63 @@
+
+// Body
+$body-bg: #f5f8fa;
+
+// Colors
+$white: #fff;
+$black: #000;
+
+// Borders
+$laravel-border-color: darken($body-bg, 10%);
+$list-group-border: $laravel-border-color;
+$navbar-default-border: $laravel-border-color;
+$panel-default-border: $laravel-border-color;
+$panel-inner-border: $laravel-border-color;
+
+// Brands
+$brand-primary: #28347c;
+$brand-light: #097bed;
+$brand-dark: #011936;
+$brand-info: #8eb4cb;
+$brand-success: #2ab27b;
+$brand-warning: #cbb956;
+$brand-danger: #bf5329;
+
+// Gradients
+$gradient-point: radial-gradient(circle, $brand-dark 30%, rgba($white, 0) 30.2%, rgba($white, 0) 50%, $brand-dark 50.2%, $brand-dark 60%, rgba($white, 0) 60.2%);
+$gradient-point-white: radial-gradient(circle, $white 30%, rgba($white, 0) 30.2%, rgba($white, 0) 50%, $white 50.2%, $white 60%, rgba($white, 0) 60.2%);
+
+
+// Typography
+$icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/";
+$font-family-serif: 'Playfair Display', serif;
+$font-family-base:  "Raleway", sans-serif;
+$font-size-base: 14px;
+$text-color: #838b8f;
+$text-dark: darken($text-color, 30%);
+$text-bright: $white;
+
+// Navbar
+$navbar-default-bg: #fff;
+
+// Buttons
+$btn-default-color: $text-color;
+
+// Inputs
+$input-border: lighten($text-color, 40%);
+$input-border-focus: $brand-light;
+$input-color-placeholder: lighten($text-color, 30%);
+
+// Panels
+$panel-default-heading-bg: #fff;
+
+$img-logo: '/images/homebuds-logo.jpg';
+
+// Media tiers
+$col-xs: 576px;
+$col-sm: 768px;
+$col-md: 992px;
+$col-lg: 1200px;
+$col-xl: 1200px; // Use with greater
+
+$grid-gutter-width: 30px;
+

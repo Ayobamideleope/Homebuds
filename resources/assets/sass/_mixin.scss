@@ -1,0 +1,101 @@
+@import 'variables';
+
+@function to-rem ($px) {
+  @return ($px / $font-size-base) * 1rem;
+}
+
+//media-queries
+
+@mixin col-sm-down {
+  @media screen and (max-width: $col-sm) {
+    @content;
+  }
+}
+
+@mixin col-md-down {
+  @media screen and (max-width: $col-md) {
+    @content;
+  }
+}
+
+@mixin col-lg-down {
+  @media screen and (max-width: $col-lg) {
+    @content;
+  }
+}
+
+@mixin col-xs-only {
+  @media screen and (max-width: $col-xs) {
+    @content;
+  }
+}
+
+@mixin col-sm-only {
+  @media screen and (min-width: $col-xs) and (max-width: $col-sm) {
+    @content;
+  }
+}
+
+@mixin col-md-only {
+  @media screen and (min-width: $col-sm) and (max-width: $col-md) {
+    @content;
+  }
+}
+
+@mixin col-lg-only {
+  @media screen and (min-width: $col-md) and (max-width: $col-lg) {
+    @content;
+  }
+}
+
+@mixin col-sm {
+  @media screen and (min-width: $col-xs) {
+    @content;
+  }
+}
+
+@mixin col-md {
+  @media screen and (min-width: $col-sm) {
+    @content;
+  }
+}
+
+@mixin col-lg {
+  @media screen and (min-width: $col-md) {
+    @content;
+  }
+}
+
+@mixin col-xl {
+  @media screen and (width: $col-lg) and (min-width: $col-lg) {
+    @content;
+  }
+}
+
+@mixin abs-center {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+///@func bg-compose
+// @param url e.g. url('images/image.png')
+@function bg-compose($url: url($img-logo), $prop:'no-repeat center') {
+  @return $url #{$prop};
+}
+
+///@mixin bg-img
+//@param fallback-set true or false to use default fallback
+//@param img output of @func bg-compose
+@mixin bg-img($fallback-set, $img) {
+  $fallback: bg-compose();
+  @if $fallback-set {
+    background: #{$img}, $fallback;
+    background-size: cover;
+  } @else {
+    background: $img;
+    background-size: cover;
+  }
+}
+

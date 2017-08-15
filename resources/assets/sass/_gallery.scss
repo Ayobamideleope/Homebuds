@@ -1,0 +1,150 @@
+@import 'mixin';
+
+.card-row {
+  align-items: baseline;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card-img-cont {
+  height: calc(100% - 1.91rem);
+  position: relative;
+}
+
+.card {
+  padding: 0;
+  &:nth-child(n + 2) {
+    margin-left: 15px;
+  }
+  @include col-lg {
+    width: calc((100% / 4) - 22.5px); // so as to be left with grid-gutter-size space between
+    &:nth-child(n + 2) {
+      margin-left: 30px;
+    }
+    &:nth-child(4n + 1) {
+      margin-left: 0;
+    }
+    &:nth-child(n + 5) {
+      margin-top: 1.9rem; // Calculated by getting the height of the footer of a card
+    }
+  }
+  @include col-md-only {
+    width: calc((100% / 3) - 11.25px); // so as to be left with 1/2 grid-gutter-size space between
+    &:nth-child(3n + 1) {
+      margin-left: 0;
+    }
+    &:nth-child(n + 4) {
+      margin-top: 1.9rem; // Calculated by getting the height of the footer of a card
+    }
+  }
+  @include col-sm-down {
+    width: calc((100% / 2) - 7.5px); // so as to be left with 1/2 grid-gutter-size space between
+    &:nth-child(n + 2) {
+      margin-left: 15px;
+    }
+    &:nth-child(2n + 1) {
+      margin-left: 0;
+    }
+    &:nth-child(n + 3) {
+      margin-top: 1.9rem; // Calculated by getting the height of the footer of a card
+    }
+  }
+  &:hover {
+    .card-overlay {
+      opacity: 1;
+    }
+    .card-overlay-item {
+      transform: translateX(0);
+
+    }
+    .card-block {
+      background: $text-bright;
+      border: 1px solid rgba($black, .125);
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px;
+      border-top: transparent;
+      color: $text-dark;
+      margin-left: -.5px;
+      transform: translateY(100%);
+      width: calc(100% + 1.5px);
+    }
+    .card-footer {
+      opacity: 0;
+      transition: .3s;
+    }
+  }
+}
+
+.card-img-top {
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.card-overlay {
+  align-items: center;
+  background: linear-gradient(rgba($brand-light, .4), rgba($brand-dark, .8));
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: .6s ease-in .1s;
+}
+
+.card-block {
+  background: url('/images/brick-wall-dark.png'), url('/images/brick-wall-dark.png'), url('/images/brick-wall-dark.png');
+  bottom: 0;
+  color: $text-bright;
+  font-weight: 300;
+  left: 0;
+  padding: 2px 7px;
+  position: absolute;
+  text-align: center;
+  text-shadow: -.5px -.5px 0 darken($text-color, 50%);
+  transition: .5s ease-in;
+  width: 100%;
+  * {
+    font-weight: 300;
+  }
+}
+
+.card-overlay-item {
+  align-items: center;
+  background: $brand-light;
+  border-radius: 50%;
+  color: $text-bright;
+  display: flex;
+  height: 50px;
+  justify-content: center;
+  transition: transform .5s .2s;
+  width: 50px;
+  &:hover {
+    box-shadow: inset 0 0 2px 1px $brand-primary;
+    & > * {
+      font-size: 1.2rem;
+    }
+  }
+  & + & {
+    margin-left: 1rem;
+  }
+  & > * {
+    font-size: 1.25rem;
+    font-weight: lighter;
+  }
+  &:first-child {
+    transform: translateX(-50%);
+  }
+  &:last-child {
+    transform: translateX(50%);
+  }
+}
+
+.card-footer {
+  padding: .2rem;
+  text-align: right;
+  transition: .2s .5s;
+}

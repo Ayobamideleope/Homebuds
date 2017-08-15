@@ -1,0 +1,133 @@
+@import 'mixin';
+// FIXME: .media not showing well in xs tier
+
+.media-cont {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  @include col-md-only {
+    width: calc(100% - 30px); // 1/2 of $grid-gutter-size
+  }
+  @include col-sm-down {
+    flex-direction: column; // 1/2 of $grid-gutter-size
+    width: calc(100% - 30px);
+  }
+  @include col-xs-only {
+    width: calc(100% - 15px);
+  }
+}
+
+.media {
+  background: $white;
+  border: 1px solid darken($text-bright, 5%);
+  border-radius: to-rem(2px);
+  max-height: fit-content;
+  padding: 0;
+  position: relative;
+  width: 100%;
+  @include col-md-only {
+    width: calc(50% - 15px); // 1/2 of $grid-gutter-size
+  }
+  @include col-lg {
+    width: calc(50% - 30px); // $grid-gutter-size
+  }
+  @include col-sm-down {
+    & + & {
+      margin-top: 30px;
+    }
+  }
+  @include col-xs-only {
+    flex-direction: column;
+  }
+  & + & + & {
+    @include col-md {
+      margin-top: $grid-gutter-width / 2;
+    }
+    @include col-lg {
+      margin-top: $grid-gutter-width;
+    }
+  }
+  &:hover {
+    .media-overlay {
+      opacity: 1;
+    }
+    .media-overlay-item {
+      transform: translateX(0);
+    }
+    .media-content-title {
+      color: $brand-primary;
+    }
+    .info-item {
+      text-decoration-skip: ink;
+      text-decoration: underline;
+      text-decoration-color: $text-dark;
+    }
+    //.media-content {
+    //  background: $text-bright;
+    //  border-bottom-left-radius: 5px;
+    //  border-bottom-right-radius: 5px;
+    //  color: $text-dark;
+    //  transform: translateY(100%);
+    //}
+    //.media-footer {
+    //  opacity: 0;
+    //  transition: .3s;
+    //}
+  }
+}
+
+.media-img {
+  height: 100%;
+  object-fit: cover;
+  padding: 0;
+  width: 100%;
+  @include col-xs-only {
+    max-height: 15rem;
+  }
+}
+
+.media-content {
+  padding: 5px 10px 0 15px;
+  transition: .5s ease-in;
+}
+
+.media-content-title {
+  &:visited, &:active {
+    color: $text-dark;
+  }
+  font-size: 1.2rem;
+  margin-right: 0;
+  display: block;
+  padding: 0;
+  text-align: right; // So as to align to to and right of the media container's padding
+  text-decoration-line: none;
+  text-shadow: -.5px -.5px 0 darken($text-color, 50%);
+}
+
+.media-content-desc {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: .5rem;
+  text-align: right;
+  font-size: .8rem;
+}
+
+.media-content-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.info-item {
+  & + & {
+    margin-left: 1rem;
+  }
+}
+
+.media-content-footer {
+  background-color: darken($text-bright, 5%);
+  margin: 0 -10px 0 -15px;
+  padding: .1rem to-rem(10px) .1rem .1rem; // 10px right So as to conform with the padding of the title
+  text-align: right;
+  transition: .2s .5s;
+}

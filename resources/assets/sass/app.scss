@@ -1,0 +1,95 @@
+// Fonts
+//@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600"); using link already in html for faster
+//
+// Bootstrap
+//@import 'node_modules/bootstrap-sass/assets/stylesheets/bootstrap';
+@import 'reset';
+@import 'typography';
+@import 'spacing';
+@import 'media';
+@import 'navbar';
+@import 'slides';
+@import 'gallery';
+
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+#app {
+  height: 100%;
+}
+
+#expand-business-teaser {
+  .content {
+    padding: 80px;
+    @include col-sm-down {
+      color: $white;
+      .h {
+        color: $white;
+      }
+      ul.no-pad {
+         list-style: circle outside $gradient-point-white;
+         padding: inherit;
+       }
+
+    }
+  }
+
+  // Use with hidden-*-* to hide in certain tiers
+  .bg-img {
+    @include bg-img(true, bg-compose(url("/images/product-growth-laptop.jpeg")));
+  }
+
+  // background image resolve, use it when the normal bg image will not be shown, must be the same with col-* in html class
+  // Also remember to make sure there is color compatability between the background and the content. Or use masked or filtered background
+  .bg-img-rs {
+    @include col-sm-down {
+      @include bg-img(true, bg-compose(#{'linear-gradient(#{rgba($brand-dark, .1)}, #{rgba($brand-dark, .8)}), '}, '') bg-compose(url("/images/product-growth-laptop.jpeg")));
+    }
+  }
+}
+
+#section__register {
+  &, .h {
+    color: $text-bright;
+  }
+      @include bg-img(true, bg-compose(#{'linear-gradient(#{rgba($brand-dark, .1)}, #{rgba($brand-dark, .8)}), '}, '') bg-compose(url("/images/product-growth-tablet.jpeg")));
+}
+
+.section__footer {
+  @include bg-img(true, bg-compose(#{'linear-gradient(#{rgba($brand-dark, .4)}, #{rgba($brand-dark, .9)}), '}, '') bg-compose(url("/images/slide/slide-3.jpeg")));
+  color: $text-bright;
+  filter: grayscale(100%);
+  .text-link {
+    color: darken($text-bright, 30%);
+  }
+}
+
+.footer-brand {
+  align-items: baseline;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  max-height: 100px;
+  .brand__ {
+    &img {
+      filter: grayscale(0%);
+      max-height: 100px;
+      max-width: 100px;
+      object-fit: cover;
+    }
+    &text {
+
+    }
+  }
+}
+
+.footer-copyright {
+  background-color: darken($text-bright, 7%);
+}

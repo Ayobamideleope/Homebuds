@@ -1,0 +1,440 @@
+@import 'variables', 'mixin';
+
+// Margins
+
+// Sibling margin no-margin
+.sib-mg-no {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+// Sibling margin extra-small
+.sib-mg-xs {
+  margin-bottom: 0;
+  & + & {
+    margin-top: to-rem(10px);
+  }
+  @include col-sm-down {
+    margin-top: to-rem(8px);
+  }
+}
+
+// Sibling margin small
+.sib-mg-sm {
+  margin-bottom: 0;
+  & + & {
+    margin-top: to-rem(20px);
+    @include col-sm-down {
+      margin-top: to-rem(15px);
+    }
+  }
+
+}
+
+// Sibling margin medium
+.sib-mg-md {
+  margin-bottom: 0;
+  & + & {
+    margin-top: to-rem(30px);
+    @include col-sm-down {
+      margin-top: to-rem(20px);
+    }
+  }
+}
+
+// Sibling margin large
+.sib-mg-lg {
+  margin-bottom: 0;
+  & + & {
+    margin-top: to-rem(50px);
+    @include col-sm-down {
+      margin-top: to-rem(40px);
+    }
+  }
+}
+
+// Sibling margin extra-large
+.sib-mg-xl {
+  margin-bottom: 0;
+  & + & {
+    margin-top: to-rem(80px);
+    @include col-sm-down {
+      margin-top: to-rem(60px);
+    }
+  }
+}
+
+
+
+
+// Independent Margins
+
+.mg-all- {
+  &no {
+    margin: 0;
+  }
+  &xs {
+    margin: (5 / 16) * 1rem;
+  }
+  &sm {
+    margin: (15 / 16) * 1rem;
+  }
+  &md {
+    margin: (30 / 16) * 1rem;
+    @include col-sm-down {
+      margin: (25 / 16) * 1rem;
+    }
+  }
+  &lg {
+    margin: (80 / 16) * 1rem;
+    @include col-sm-down {
+      margin: (60 / 16) * 1rem;
+    }
+  }
+  &xl {
+    margin: (100 / 16) * 1rem;
+    @include col-sm-down {
+      margin: (80 / 16) * 1rem;
+    }
+  }
+  &xxl {
+    margin: (150 / 16) * 1rem;
+    @include col-sm-down {
+      margin: (120 / 16) * 1rem;
+    }
+  }
+}
+
+// lt means left
+.mg-lt- {
+  &no {
+    margin-left: 0;
+  }
+  &xs {
+    margin-left: (5 / 16) * 1rem;
+  }
+  &sm {
+    margin-left: (15 / 16) * 1rem;
+  }
+  &md {
+    margin-left: (30 / 16) * 1rem;
+    @include col-sm-down {
+      margin-left: (25 / 16) * 1rem;
+    }
+  }
+  &lg {
+    margin-left: (80 / 16) * 1rem;
+    @include col-sm-down {
+      margin-left: (60 / 16) * 1rem;
+    }
+  }
+  &xl {
+    margin-left: (100 / 16) * 1rem;
+    @include col-sm-down {
+      margin-left: (80 / 16) * 1rem;
+    }
+  }
+  &xxl {
+    margin-left: (150 / 16) * 1rem;
+    @include col-sm-down {
+      margin-left: (120 / 16) * 1rem;
+    }
+  }
+}
+
+// rt means right
+.mg-rt- {
+  &no {
+    margin-right: 0;
+  }
+  &xs {
+    margin-right: (5 / 16) * 1rem;
+  }
+  &sm {
+    margin-right: (15 / 16) * 1rem;
+  }
+  &md {
+    margin-right: (30 / 16) * 1rem;
+    @include col-sm-down {
+      margin-right: (25 / 16) * 1rem;
+    }
+  }
+  &lg {
+    margin-right: (80 / 16) * 1rem;
+    @include col-sm-down {
+      margin-right: (60 / 16) * 1rem;
+    }
+  }
+  &xl {
+    margin-right: (100 / 16) * 1rem;
+    @include col-sm-down {
+      margin-right: (80 / 16) * 1rem;
+    }
+  }
+  &xxl {
+    margin-right: (150 / 16) * 1rem;
+    @include col-sm-down {
+      margin-right: (120 / 16) * 1rem;
+    }
+  }
+}
+
+.mg-top- {
+  &no {
+    margin-top: 0;
+  }
+  &xs {
+    margin-top: (5 / 16) * 1rem;
+  }
+  &sm {
+    margin-top: (15 / 16) * 1rem;
+  }
+  &md {
+    margin-top: (30 / 16) * 1rem;
+    @include col-sm-down {
+      margin-top: (25 / 16) * 1rem;
+    }
+  }
+  &lg {
+    margin-top: (80 / 16) * 1rem;
+    @include col-sm-down {
+      margin-top: (60 / 16) * 1rem;
+    }
+  }
+  &xl {
+    margin-top: (100 / 16) * 1rem;
+    @include col-sm-down {
+      margin-top: (80 / 16) * 1rem;
+    }
+  }
+  &xxl {
+    margin-top: (150 / 16) * 1rem;
+    @include col-sm-down {
+      margin-top: (120 / 16) * 1rem;
+    }
+  }
+}
+
+// btm = bottom
+.mg-btm- {
+  &no {
+    margin-bottom: 0;
+  }
+  &xs {
+    margin-bottom: (5 / 16) * 1rem;
+  }
+  &sm {
+    margin-bottom: (15 / 16) * 1rem;
+  }
+  &md {
+    margin-bottom: (30 / 16) * 1rem;
+    @include col-sm-down {
+      margin-bottom: (25 / 16) * 1rem;
+    }
+  }
+  &lg {
+    margin-bottom: (80 / 16) * 1rem;
+    @include col-sm-down {
+      margin-bottom: (60 / 16) * 1rem;
+    }
+  }
+  &xl {
+    margin-bottom: (100 / 16) * 1rem;
+    @include col-sm-down {
+      margin-bottom: (80 / 16) * 1rem;
+    }
+  }
+  &xxl {
+    margin-bottom: (150 / 16) * 1rem;
+    @include col-sm-down {
+      margin-bottom: (120 / 16) * 1rem;
+    }
+  }
+}
+
+
+
+// Padding
+
+.pd-all- {
+  &no {
+    padding: 0;
+  }
+  &xs {
+    padding: (5 / 16) * 1rem;
+  }
+  &sm {
+    padding: (15 / 16) * 1rem;
+  }
+  &md {
+    padding: (30 / 16) * 1rem;
+    @include col-sm-down {
+      padding: (25 / 16) * 1rem;
+    }
+  }
+  &lg {
+    padding: (80 / 16) * 1rem;
+    @include col-sm-down {
+      padding: (60 / 16) * 1rem;
+    }
+  }
+  &xl {
+    padding: (100 / 16) * 1rem;
+    @include col-sm-down {
+      padding: (80 / 16) * 1rem;
+    }
+  }
+  &xxl {
+    padding: (150 / 16) * 1rem;
+    @include col-sm-down {
+      padding: (120 / 16) * 1rem;
+    }
+  }
+}
+
+// lt means left
+.pd-lt- {
+  &no {
+    padding-left: 0;
+  }
+  &xs {
+    padding-left: (5 / 16) * 1rem;
+  }
+  &sm {
+    padding-left: (15 / 16) * 1rem;
+  }
+  &md {
+    padding-left: (30 / 16) * 1rem;
+    @include col-sm-down {
+      padding-left: (25 / 16) * 1rem;
+    }
+  }
+  &lg {
+    padding-left: (80 / 16) * 1rem;
+    @include col-sm-down {
+      padding-left: (60 / 16) * 1rem;
+    }
+  }
+  &xl {
+    padding-left: (100 / 16) * 1rem;
+    @include col-sm-down {
+      padding-left: (80 / 16) * 1rem;
+    }
+  }
+  &xxl {
+    padding-left: (150 / 16) * 1rem;
+    @include col-sm-down {
+      padding-left: (120 / 16) * 1rem;
+    }
+  }
+}
+
+// rt means right
+.pd-rt- {
+  &no {
+    padding-right: 0;
+  }
+  &xs {
+    padding-right: (5 / 16) * 1rem;
+  }
+  &sm {
+    padding-right: (15 / 16) * 1rem;
+  }
+  &md {
+    padding-right: (30 / 16) * 1rem;
+    @include col-sm-down {
+      padding-right: (25 / 16) * 1rem;
+    }
+  }
+  &lg {
+    padding-right: (80 / 16) * 1rem;
+    @include col-sm-down {
+      padding-right: (60 / 16) * 1rem;
+    }
+  }
+  &xl {
+    padding-right: (100 / 16) * 1rem;
+    @include col-sm-down {
+      padding-right: (80 / 16) * 1rem;
+    }
+  }
+  &xxl {
+    padding-right: (150 / 16) * 1rem;
+    @include col-sm-down {
+      padding-right: (120 / 16) * 1rem;
+    }
+  }
+}
+
+.pd-top- {
+  &no {
+    padding-top: 0;
+  }
+  &xs {
+    padding-top: (5 / 16) * 1rem;
+  }
+  &sm {
+    padding-top: (15 / 16) * 1rem;
+  }
+  &md {
+    padding-top: (30 / 16) * 1rem;
+    @include col-sm-down {
+      padding-top: (25 / 16) * 1rem;
+    }
+  }
+  &lg {
+    padding-top: (80 / 16) * 1rem;
+    @include col-sm-down {
+      padding-top: (60 / 16) * 1rem;
+    }
+  }
+  &xl {
+    padding-top: (100 / 16) * 1rem;
+    @include col-sm-down {
+      padding-top: (80 / 16) * 1rem;
+    }
+  }
+  &xxl {
+    padding-top: (150 / 16) * 1rem;
+    @include col-sm-down {
+      padding-top: (120 / 16) * 1rem;
+    }
+  }
+}
+
+// btm = bottom
+.pd-btm- {
+  &no {
+    padding-bottom: 0;
+  }
+  &xs {
+    padding-bottom: (5 / 16) * 1rem;
+  }
+  &sm {
+    padding-bottom: (15 / 16) * 1rem;
+  }
+  &md {
+    padding-bottom: (30 / 16) * 1rem;
+    @include col-sm-down {
+      padding-bottom: (25 / 16) * 1rem;
+    }
+  }
+  &lg {
+    padding-bottom: (80 / 16) * 1rem;
+    @include col-sm-down {
+      padding-bottom: (60 / 16) * 1rem;
+    }
+  }
+  &xl {
+    padding-bottom: (100 / 16) * 1rem;
+    @include col-sm-down {
+      padding-bottom: (80 / 16) * 1rem;
+    }
+  }
+  &xxl {
+    padding-bottom: (150 / 16) * 1rem;
+    @include col-sm-down {
+      padding-bottom: (120 / 16) * 1rem;
+    }
+  }
+}

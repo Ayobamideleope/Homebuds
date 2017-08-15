@@ -1,0 +1,43 @@
+@import 'mixin';
+
+#welcome-slides {
+  height: 80%;
+  .swiper-content {
+    @include abs-center;
+    color: $text-bright;
+  }
+}
+
+.swiper-container {
+  height: 100%;
+  width: 100%;
+}
+
+.swiper-slide {
+  background: $brand-dark;
+  background-size: cover;
+  text-align: center;
+}
+
+.swiper-pagination, .swiper-button-prev, .swiper-button-next{
+
+}
+
+@mixin mask($color, $darkness) {
+  .dark-mask {
+    background-color: rgba($color, $darkness);
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+}
+
+#welcome-slides .swiper-slide:first-child {
+  background-image: linear-gradient(rgba($brand-dark, .1), rgba($brand-dark, .8)), url('/images/slide/slide-1.jpeg');
+}
+
+#welcome-slides .swiper-slide:nth-child(2) {
+  background-image: linear-gradient(rgba($brand-dark, .1), rgba($brand-dark, .8)), url('/images/slide/slide-4.jpeg');
+}

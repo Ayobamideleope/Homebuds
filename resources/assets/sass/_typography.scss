@@ -1,0 +1,36 @@
+@import 'mixin';
+
+// h = h1 - h6 or heading
+.h {
+  color: $text-dark;
+  font-family: $font-family-serif;
+}
+
+.text-link {
+  &:link, &:visited {
+    color: $text-color;
+  }
+  &:hover {
+    color: $brand-light;
+  }
+  &.active, &:active {
+    color: $brand-primary;
+  }
+}
+
+.section__title {
+  border-bottom: 5px solid transparent;
+  border-radius: 50px;
+  border-top: 2px solid $brand-light;
+  box-shadow: 0px -1.5px 4px rgba($text-color, .3);
+  color: $brand-primary;
+  display: inline-block;
+  font-weight: 400;
+  left: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1rem 2rem;
+  position: relative;
+  text-align: center;
+  transform: translateX(-50%);
+}

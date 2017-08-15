@@ -1,0 +1,82 @@
+@import 'mixin';
+
+
+.btn {
+  border: to-rem(1.5px) solid transparent;
+  border-radius: 25px;
+}
+
+.btn-default {
+  &, &:visited {
+    background-color: $text-bright;
+    border-color: $brand-primary;
+    color: $brand-primary;
+  }
+  &:hover {
+    background-color: $brand-primary;
+    color: $text-bright;
+  }
+  &:active, &.active {
+    background-color: $brand-dark;
+    color: $text-bright;
+  }
+}
+
+.btn-primary {
+  &:visited, & {
+    background-color: $brand-primary;
+    color: $text-bright;
+  }
+
+  &:hover {
+    background-color: $brand-light;
+  }
+  &:active, &.active {
+    background-color: $brand-dark;
+    border-color: $brand-dark;
+    color: $text-bright;
+  }
+}
+
+.btn-lg {
+  border-width: .15rem;
+}
+
+.btn-sm {
+  border-width: .05rem;
+}
+
+.ul-dot {
+  margin-left: 0;
+  padding-left: 1rem;
+  .fa-li {
+    font-size: .625rem;
+    top: .5rem;
+  }
+
+}
+
+.bg-img {
+  //height: 100%;
+  //width: 100%;
+}
+
+
+.flex{
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.mg-rt-auto {
+  margin-right: auto;
+}
+
+.mg-lt-auto {
+  margin-left: auto;
+}
+
+.abs-center {
+  @include abs-center;
+}
