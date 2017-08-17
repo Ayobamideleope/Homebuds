@@ -17,7 +17,7 @@
     color: $text-bright;
   }
   &:active, &.active {
-    background-color: $brand-dark;
+    background-color: $brand-secondary;
     color: $text-bright;
   }
 }
@@ -29,11 +29,11 @@
   }
 
   &:hover {
-    background-color: $brand-light;
+    background-color: $brand-secondary;
   }
   &:active, &.active {
-    background-color: $brand-dark;
-    border-color: $brand-dark;
+    background-color: $brand-secondary;
+    border-color: $brand-secondary;
     color: $text-bright;
   }
 }

@@ -57,7 +57,7 @@
       transform: translateX(0);
 
     }
-    .card-block {
+    .card-body {
       background: $text-bright;
       border: 1px solid rgba($black, .125);
       border-bottom-left-radius: 5px;
@@ -83,7 +83,7 @@
 
 .card-overlay {
   align-items: center;
-  background: linear-gradient(rgba($brand-light, .4), rgba($brand-dark, .8));
+  background: rgba($black, .5);
   bottom: 0;
   display: flex;
   justify-content: center;
@@ -95,7 +95,7 @@
   transition: .6s ease-in .1s;
 }
 
-.card-block {
+.card-body {
   background: url('/images/brick-wall-dark.png'), url('/images/brick-wall-dark.png'), url('/images/brick-wall-dark.png');
   bottom: 0;
   color: $text-bright;
@@ -114,7 +114,7 @@
 
 .card-overlay-item {
   align-items: center;
-  background: $brand-light;
+  background: $brand-primary;
   border-radius: 50%;
   color: $text-bright;
   display: flex;
@@ -144,6 +144,8 @@
 }
 
 .card-footer {
+  background-color: $brand-primary;
+  color: darken($text-bright, 10%);
   padding: .2rem;
   text-align: right;
   transition: .2s .5s;

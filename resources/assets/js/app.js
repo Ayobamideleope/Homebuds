@@ -5,8 +5,7 @@
  */
 import './bootstrap';
 import $ from 'jquery';
-// import '../vendor/bootstrap/tether.min';
-// import '../vendor/bootstrap/bootstrap.min';
+
 import 'swiper/dist/js/swiper.jquery.min';
 // import 'animate.css';
 import mixitup from 'mixitup';
@@ -45,6 +44,7 @@ $.fn.extend({
     }
 });
 
+const word = 'This is a story';
 
 $(document).scroll((function () {
     const expand_business_teaser_height = $("#expand-business-teaser").height();

@@ -13,18 +13,116 @@
                     </div>
                 </div>
                 <div class="swiper-slide">
-                    <div class="dark-mask"></div>
+                    {{--<div class="dark-mask"></div>--}}
                     <div class="swiper-content">
                         <h3>Just sit back and enjoy while we do the connection for you</h3>
                     </div>
                 </div>
             </div>
-            <div class="swiper-pagination"></div>
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
+            {{--<div class="swiper-pagination"></div>--}}
+            {{--<div class="swiper-button-next"></div>--}}
+            {{--<div class="swiper-button-prev"></div>--}}
+        </div>
+        <div class="welcome-slides-overlay">
+            <form action="#" class="form form-inline">
+                <div class="form-group row">
+                    <label for="search__name" class="d-none">Business Name</label>
+                    <input type="search"
+                           class="form-control col-sm-6" name="search__name" id="search__name" placeholder="Search Business">
+                    <label for="search__state" class="d-none">State or location</label>
+                    <select class="custom-select col" name="search__state" id="search__state">
+                        <option selected>Select State</option>
+                        <option value="">Lagos</option>
+                        <option value="">Abuja</option>
+                        <option value="">Oyo</option>
+                        <option value="">Kwara</option>
+                    </select>
+                    <button type="submit" class="btn btn-primary col">Search</button>
+                </div>
+            </form>
+
         </div>
     </section>
-
+    <section class="popular-categories">
+        <div class="card-deck">
+                <div class="card">
+                    <div class="card-img-cont">
+                        <img class="card-img-top" alt=" image"
+                             src="{{ asset('images/cat/wood-joiner-marking-wood.jpeg') }}">
+                        <div class="card-overlay">
+                            <div class="card-overlay-item" data-toggle="tooltip" data-placement="left"
+                                 title="Search Products in Category"><i class="fa fa-search" aria-hidden="true"></i>
+                            </div>
+                            <div class="card-overlay-item" data-toggle="tooltip" data-placement="right"
+                                 title="Add Product to Category"><span>&#9547;</span></div>
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title">Carpenters</h4>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <small>Last Updated 3min ago</small>
+                    </div>
+                </div>
+            <div class="card">
+                <div class="card-img-cont">
+                    <img class="card-img-top" alt=" image"
+                         src="{{ asset('images/cat/photographer-with-printed-photos.jpeg') }}">
+                    <div class="card-overlay">
+                        <div class="card-overlay-item" data-toggle="tooltip" data-placement="left"
+                             title="Search Products in Category"><i class="fa fa-search" aria-hidden="true"></i>
+                        </div>
+                        <div class="card-overlay-item" data-toggle="tooltip" data-placement="right"
+                             title="Add Product to Category"><span>&#9547;</span></div>
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">Photographers</h4>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <small>Last Updated 4min ago</small>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-img-cont">
+                    <img class="card-img-top" alt=" image"
+                         src="{{ asset('images/cat/cat-mech.jpeg') }}">
+                    <div class="card-overlay">
+                        <div class="card-overlay-item" data-toggle="tooltip" data-placement="left"
+                             title="Search Products in Category"><i class="fa fa-search" aria-hidden="true"></i>
+                        </div>
+                        <div class="card-overlay-item" data-toggle="tooltip" data-placement="right"
+                             title="Add Product to Category"><span>&#9547;</span></div>
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">Mechanics</h4>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <small>Last Updated 5min ago</small>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-img-cont">
+                    <img class="card-img-top" alt=" image"
+                         src="{{ asset('images/cat/wood-joiner-marking-wood.jpeg') }}">
+                    <div class="card-overlay">
+                        <div class="card-overlay-item" data-toggle="tooltip" data-placement="left"
+                             title="Search Products in Category"><i class="fa fa-search" aria-hidden="true"></i>
+                        </div>
+                        <div class="card-overlay-item" data-toggle="tooltip" data-placement="right"
+                             title="Add Product to Category"><span>&#9547;</span></div>
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">cat-make-up</h4>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <small>Last Updated 3min ago</small>
+                </div>
+            </div>
+        </div>
+    </section>
     <section id="expand-business-teaser">
         <div class="container-fluid">
             <div class="row">
@@ -88,7 +186,6 @@
             {{--<div class="row ">--}}
                 @foreach($categories as $category)
                     @foreach($category as $sub_cat)
-                        {{--<div class="col-sm-4 col-lg-3">--}}
                             <div class="card mix {{ $cat_keys[$loop->index] }}">
                                 <div class="card-img-cont">
                                     <img class="card-img-top" alt=" {{ $cat_keys[$loop->index] }} image"
@@ -100,19 +197,19 @@
                                         <div class="card-overlay-item" data-toggle="tooltip" data-placement="right"
                                              title="Add Product to Category"><span>&#9547;</span></div>
                                     </div>
-                                    <div class="card-block">
+                                    <div class="card-body">
                                         <h4 class="card-title">{{ $sub_cat }}</h4>
                                     </div>
                                 </div>
                                 <div class="card-footer">
-                                    <small class="text-muted">Last Updated 3min ago</small>
+                                    <small>Last Updated 3min ago</small>
                                 </div>
                             </div>
-                        {{--</div>--}}
                     @endforeach
                 @endforeach
             {{--</div>--}}
         </div>
+
 
     </section>
 
@@ -124,21 +221,21 @@
             {{--<div class="">--}}
             @foreach($ads as $advert)
                 <div class="media">
-                <img class="media-img col-sm-4" alt="{{ $advert['name'] }} image"
-                     src="{{ asset('images/cat/wood-joiner-marking-wood.jpeg') }}">
-                <div class="media-content col-sm-8">
-                    <a class="media-content-title" href="#">{{ $advert['name'] }}</a>
-                    <p class="media-content-desc">{{ $advert['description'] }}</p>
-                    <div class="media-content-info">
-                        <a href="#" class="text-link info-item">{{ $advert['category'] }}</a>
-                        <a href="#" class="text-link info-item"><i class="fa fa-map-marker" aria-hidden="true"></i>
-                            {{ $advert['location'] }}</a>
-                    </div>
-                    <div class="media-content-footer">
-                        <small class="text-muted">{{ $advert['date'] }}</small>
+                    <img class="media-img col-sm-4" alt="{{ $advert['name'] }} image"
+                         src="{{ asset('images/cat/wood-joiner-marking-wood.jpeg') }}">
+                    <div class="media-content col-sm-8">
+                        <a class="media-content-title" href="#">{{ $advert['name'] }}</a>
+                        <p class="media-content-desc">{{ $advert['description'] }}</p>
+                        <div class="media-content-info">
+                            <a href="#" class="text-link info-item">{{ $advert['category'] }}</a>
+                            <a href="#" class="text-link info-item"><i class="fa fa-map-marker" aria-hidden="true"></i>
+                                {{ $advert['location'] }}</a>
+                        </div>
+                        <div class="media-content-footer">
+                            <small>{{ $advert['date'] }}</small>
+                        </div>
                     </div>
                 </div>
-            </div>
             @endforeach
             {{--</div>--}}
         </div>
@@ -219,7 +316,7 @@
                     <div class="footer-brand col-sm-10" href="#">
                         <img src="{{ asset('images/homebuds-logo.jpg') }}" class="img-fluid brand__img"
                              alt="Hombuds logo">
-                        <span class="brand__txt hidden-sm-down">Homebuds</span>
+                        <span class="brand__txt d-none d-md-block">Homebuds</span>
                     </div>
                     <p>Homebuds is the connection between individuals that need services and service providers, in
                         Nigeria. Homebuds was started in 2016, so we are still a startup, but you can trust us (due to

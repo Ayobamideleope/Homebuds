@@ -7,20 +7,20 @@
   justify-content: space-between;
 }
 
-.navbar-brand{
-height: 100%;
+.navbar-brand {
+  height: 68px;
   &__img {
     height: 60px;
-    width: auto;
+    width: 60px;
   }
 
   &__txt {
-      color: $text-bright;
+    color: $text-bright;
   }
 }
 
 .navbar--top {
-  background-color: $brand-dark;
+  background-color: $white;
   border-bottom: 1px solid $brand-primary;
   height: 70px;
   z-index: 30;
@@ -28,7 +28,7 @@ height: 100%;
 
 .nav-toggler {
   align-items: center;
-  color: darken($text-bright, 20%);
+  color: darken($brand-primary, 10%);
   cursor: pointer;
   display: flex;
   height: 50px;
@@ -37,9 +37,9 @@ height: 100%;
   position: relative;
   width: 70px;
   &:hover {
-    color: $text-bright;
+    color: $brand-primary;
   }
-  &>* {
+  & > * {
     @include abs-center;
   }
   &__open {
@@ -52,7 +52,7 @@ height: 100%;
     .bar1,
     .bar2,
     .bar3 {
-      background-color: darken($text-bright, 20%);
+      background-color: darken($brand-primary, 20%);
       border-radius: 1.2px;
       height: 3px;
       margin: 4px 0 0;
@@ -63,17 +63,8 @@ height: 100%;
       .bar1,
       .bar2,
       .bar3 {
-        background-color: $text-bright;
+        background-color: $brand-primary;
       }
-    }
-  }
-  &__mask {
-    display: none;
-    background: $gradient-point;
-    height: 50px;
-    width: 50px;
-    .expand & {
-      background: $gradient-point-white;
     }
   }
   &__close {
@@ -83,11 +74,11 @@ height: 100%;
 }
 
 #siteNavCont {
+  background-color: $brand-secondary;
+  border: 1px solid $brand-primary;
+  border-top: 5px rgba($brand-primary, .5);
   display: none;
-  background-color: $brand-dark;
-  border-bottom: 1px solid $brand-primary;
-  border-left: 1px solid $brand-primary;
-  border-right: 1px solid $brand-primary;
+  margin-top: -4px;
   padding: 15px;
   position: absolute;
   right: 3%;

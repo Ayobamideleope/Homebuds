@@ -11,7 +11,7 @@
     color: $text-color;
   }
   &:hover {
-    color: $brand-light;
+    color: $brand-secondary;
   }
   &.active, &:active {
     color: $brand-primary;
@@ -21,7 +21,7 @@
 .section__title {
   border-bottom: 5px solid transparent;
   border-radius: 50px;
-  border-top: 2px solid $brand-light;
+  border-top: 2px solid $brand-secondary;
   box-shadow: 0px -1.5px 4px rgba($text-color, .3);
   color: $brand-primary;
   display: inline-block;

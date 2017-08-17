@@ -14,7 +14,7 @@
 }
 
 .swiper-slide {
-  background: $brand-dark;
+  background: $brand-secondary;
   background-size: cover;
   text-align: center;
 }
@@ -35,9 +35,9 @@
 }
 
 #welcome-slides .swiper-slide:first-child {
-  background-image: linear-gradient(rgba($brand-dark, .1), rgba($brand-dark, .8)), url('/images/slide/slide-1.jpeg');
+  background-image: rgba($black, .5), url('/images/slide/slide-1.jpeg');
 }
 
 #welcome-slides .swiper-slide:nth-child(2) {
-  background-image: linear-gradient(rgba($brand-dark, .1), rgba($brand-dark, .8)), url('/images/slide/slide-4.jpeg');
+  background-image: rgba($black, .5), url('/images/slide/slide-4.jpeg');
 }

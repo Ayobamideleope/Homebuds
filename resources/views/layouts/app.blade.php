@@ -1,15 +1,10 @@
 <!DOCTYPE html>
-<html lang="{{ app()->getLocale() }}">
+<html lang="en">
 <head>
-    {{--<meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Bootstrap 3 --> --}}
-
-
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <meta name="theme-color" content="#28347c">
+    <meta name="theme-color" content="#097bed">
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -17,8 +12,7 @@
     <link rel="icon" href="{{asset('images/homebuds-logo.jpg')}}" type="image/x-icon">
     <link rel="apple-touch-icon" href="{{asset('images/homebuds-logo.jpg')}}">
     <!-- Styles -->
-    <link {{--rel="preload" as="font"--}}rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Playfair+Display|Raleway">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair+Display|Raleway">
     <link href="{{ mix('css/vendor.css') }}" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
@@ -30,7 +24,7 @@
         <a class="navbar-brand col-sm-4 col-md-5" href="#">
             <img src="{{ asset('images/homebuds-logo.jpg') }}" class="img-fluid navbar-brand__img"
                  alt="Hombuds logo">
-            <span class="navbar-brand__txt hidden-sm-down">Homebuds</span>
+            <span class="navbar-brand__txt d-none d-md-block">Homebuds</span>
         </a>
 
         <div class="col-sm-7 col-md-6 col-lg-5 offset-1 d-flex align-items-center justify-content-end">
@@ -72,7 +66,6 @@
                         <div class="bar3"></div>
                     </div>
                 </div>
-                <div class="nav-toggler__mask"></div>
                 <div class="nav-toggler__close">&#9587;</div>
             </div>
 

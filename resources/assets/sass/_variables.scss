@@ -1,10 +1,174 @@
+// Variables
+//
+// Copy settings from this file into the provided `_custom.scss` to override
+// the Bootstrap defaults without modifying key, versioned files.
+//
+// Variables should follow the `$component-state-property-size` formula for
+// consistent naming. Ex: $nav-link-disabled-color and $modal-content-box-shadow-xs.
+
+// Table of Contents
+//
+// Color system
+// Options
+// Spacing
+// Body
+// Links
+// Paragraphs
+// Grid breakpoints
+// Grid containers
+// Grid columns
+// Fonts
+// Components
+// Tables
+// Buttons
+// Forms
+// Dropdowns
+// Z-index master list
+// Navs
+// Navbar
+// Pagination
+// Jumbotron
+// Form states and alerts
+// Cards
+// Tooltips
+// Popovers
+// Badges
+// Modals
+// Alerts
+// Progress bars
+// List group
+// Image thumbnails
+// Figures
+// Breadcrumbs
+// Carousel
+// Close
+// Code
+@import '~bootstrap/scss/functions';
+
+
+//
+// Color system
+//
+$white:  #fff;
+$gray-100: #f8f9fa;
+$gray-800: #343a40;
+$black:  #000;
+
+$red:     #dc3545;
+$yellow:  #ffc107;
+$green:   #28a745;
+$cyan:    #17a2b8;
+
+$brand-primary: #ff5050;
+$brand-secondary: darken($brand-primary, 10%);
+
+$theme-colors: (
+        primary: $brand-primary,
+        secondary: $brand-secondary,
+        success: $green,
+        info: $cyan,
+        warning: $yellow,
+        danger: $red,
+        light: $gray-100,
+        dark: $gray-800
+);
+
+$link-color: theme-color("primary");
+
+// Options
+//
+// Quickly modify global styling by enabling or disabling optional features.
+
+$enable-gradients:          true;
+$enable-shadows: true;
 
 // Body
-$body-bg: #f5f8fa;
+//
+// Settings for the `<body>` element.
 
-// Colors
-$white: #fff;
-$black: #000;
+$body-bg:       #f5f8fa;
+
+// Links
+//
+// Style anchor elements.
+
+$link-hover-color:      theme-color("secondary");
+
+$border-radius:          .15rem;
+$border-radius-lg:       .2rem;
+$border-radius-sm:       .1rem;
+
+
+$transition-base:        all .3s ease-in-out;
+$transition-fade:        opacity .35s linear;
+$transition-collapse:    height .55s ease;
+
+
+// Fonts
+//
+// Font, line-height, and color for body text, headings, and more.
+
+$font-family-serif: 'Playfair Display', serif;
+
+$font-size-base: .875rem; // `14px`
+$font-size-lg:   1.09rem; // `18px`
+$font-size-sm:   .75rem; // `12px`
+$line-height-base: 1.2;
+
+$lead-font-size:   1.15rem;
+
+$hr-border-color: rgba($brand-primary, .1);
+
+
+// Tables
+//
+// Customizes the `.table` component with basic values, each used across all table variations.
+
+$table-cell-padding:            .65rem;
+
+$table-head-bg:                 $brand-secondary;
+$table-head-color:              $white;
+
+
+// Buttons
+//
+// For each of Bootstrap's buttons, define text, background and border color.
+//$input-btn-line-height:     1.25 !default; // todo: check if aligned well
+//$input-btn-line-height-sm:  1.5 !default;
+//$input-btn-line-height-lg:  1.5 !default;
+
+// Allows for customizing button radius independently from global border radius
+$btn-border-radius:              3rem;
+$btn-border-radius-lg:           5rem;
+$btn-border-radius-sm:           2rem;
+
+
+// Forms
+
+$input-placeholder-color:        $brand-primary;
+
+
+// Dropdowns
+//
+// Dropdown menu container and contents.
+
+$dropdown-border-color:          rgba($brand-secondary, .15);
+$dropdown-divider-bg:            $brand-secondary;
+
+$dropdown-header-color:          $brand-secondary;
+
+// Jumbotron
+
+$jumbotron-bg:                   $brand-secondary;
+
+
+// Tooltips
+
+$tooltip-bg:                  $brand-secondary;
+
+
+// Popovers
+$popover-border-color:                rgba($brand-secondary, .2);
 
 // Borders
 $laravel-border-color: darken($body-bg, 10%);
@@ -13,51 +177,19 @@ $navbar-default-border: $laravel-border-color;
 $panel-default-border: $laravel-border-color;
 $panel-inner-border: $laravel-border-color;
 
-// Brands
-$brand-primary: #28347c;
-$brand-light: #097bed;
-$brand-dark: #011936;
-$brand-info: #8eb4cb;
-$brand-success: #2ab27b;
-$brand-warning: #cbb956;
-$brand-danger: #bf5329;
 
-// Gradients
-$gradient-point: radial-gradient(circle, $brand-dark 30%, rgba($white, 0) 30.2%, rgba($white, 0) 50%, $brand-dark 50.2%, $brand-dark 60%, rgba($white, 0) 60.2%);
-$gradient-point-white: radial-gradient(circle, $white 30%, rgba($white, 0) 30.2%, rgba($white, 0) 50%, $white 50.2%, $white 60%, rgba($white, 0) 60.2%);
-
-
-// Typography
-$icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/";
-$font-family-serif: 'Playfair Display', serif;
-$font-family-base:  "Raleway", sans-serif;
-$font-size-base: 14px;
 $text-color: #838b8f;
 $text-dark: darken($text-color, 30%);
 $text-bright: $white;
 
-// Navbar
-$navbar-default-bg: #fff;
-
-// Buttons
-$btn-default-color: $text-color;
-
-// Inputs
-$input-border: lighten($text-color, 40%);
-$input-border-focus: $brand-light;
-$input-color-placeholder: lighten($text-color, 30%);
-
-// Panels
-$panel-default-heading-bg: #fff;
-
 $img-logo: '/images/homebuds-logo.jpg';
-
+//
 // Media tiers
 $col-xs: 576px;
 $col-sm: 768px;
 $col-md: 992px;
 $col-lg: 1200px;
 $col-xl: 1200px; // Use with greater
-
-$grid-gutter-width: 30px;
+//
+//$grid-gutter-width: 30px;
 
