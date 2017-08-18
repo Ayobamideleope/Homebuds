@@ -3,7 +3,6 @@ let mix = require('laravel-mix');
 mix.js('resources/assets/js/app.js', 'public/js')
     .sourceMaps()
     .styles([
-        'resources/assets/vendor/bootstrap/bootstrap.min.css',
         'node_modules/swiper/dist/css/swiper.min.css',
         'node_modules/animate.css/animate.min.css'
     ], 'public/css/vendor.css')

@@ -1,43 +1,101 @@
 @import 'mixin';
 
 #welcome-slides {
-  height: 80%;
+  height: calc(70% - 70px); // 70px = navbar height
+  position: relative;
   .swiper-content {
-    @include abs-center;
     color: $text-bright;
+    left: 50%;
+    position: absolute;
+    top: 10%;
+    @include col-md-down{
+      width: 90%;
+    }
+    @include col-xs-only {
+      width: 100%;
+      top: 1rem;
+    }
+    transform: translateX(-50%);
+    .header {
+      font-weight: $font-weight-bold;
+    }
+  }
+  form{
+    width: inherit;
+  }
+  .row {
+    background-color: $white;
+    border-radius: 25px;
+    margin: auto;
+    @include col-xs-only {
+      background-color: transparent;
+    }
+    @include col-sm{
+      min-width: 450px;
+    }
+    @include col-lg{
+      min-width: 500px;
+    }
+    @include col-xl{
+      min-width: 600px;
+    }
+    .btn {
+      border-bottom-right-radius: 25px;
+      border-top-right-radius: 25px;
+    }
+  }
+}
+
+.welcome-slides-overlay {
+  display: flex;
+  height: 100%;
+  left: 0;
+  padding: 15px 30px;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+#search__name {
+  border: 0;
+  border-bottom-left-radius: 25px;
+  border-top-left-radius: 25px;
+  @include col-sm-down {
+    border-bottom-right-radius: 25px;
+    border-top-right-radius: 25px;
+  }
+}
+#search__state {
+  border-bottom-left-radius: 0;
+  border-right: 0;
+  border-top-left-radius: 0;
+  margin-left: -2px;
+  margin-right: -2px;
+  @include col-md {
+    border-bottom: 0;
+    border-top: 0;
+  }
+  @include col-sm-down {
+    border-radius: 25px;
+    margin-left: 0;
+    margin-right: 1px;
   }
 }
 
 .swiper-container {
   height: 100%;
   width: 100%;
+  z-index: -1;
 }
 
 .swiper-slide {
-  background: $brand-secondary;
   background-size: cover;
   text-align: center;
 }
 
-.swiper-pagination, .swiper-button-prev, .swiper-button-next{
-
-}
-
-@mixin mask($color, $darkness) {
-  .dark-mask {
-    background-color: rgba($color, $darkness);
-    height: 100%;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 100%;
-  }
-}
-
 #welcome-slides .swiper-slide:first-child {
-  background-image: rgba($black, .5), url('/images/slide/slide-1.jpeg');
+  background-image: $img-overlay, url('/images/slide/slide-1.jpeg');
 }
 
 #welcome-slides .swiper-slide:nth-child(2) {
-  background-image: rgba($black, .5), url('/images/slide/slide-4.jpeg');
+  background-image: $img-overlay, url('/images/slide/slide-4.jpeg');
 }

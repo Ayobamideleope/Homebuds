@@ -1,53 +1,31 @@
 @import 'mixin';
 
-.card-row {
+.card-row, .card-row--popular {
   align-items: baseline;
   display: flex;
   flex-wrap: wrap;
+  margin-left: -15px; // removing the size margin-left of the card from the parent will compliment to center the cards
+  // If you need a different margin, remember to recalculate. E.g. -15px+ 15px=0px, -30px + 30px=0px
 }
 
 .card-img-cont {
   height: calc(100% - 1.91rem);
   position: relative;
+  flex: 1;
 }
 
 .card {
-  padding: 0;
-  &:nth-child(n + 2) {
-    margin-left: 15px;
-  }
+  margin-left: 15px;
+  margin-top: 1.9rem;
+  padding: 0; // Calculated by getting the height of the footer of a card
   @include col-lg {
-    width: calc((100% / 4) - 22.5px); // so as to be left with grid-gutter-size space between
-    &:nth-child(n + 2) {
-      margin-left: 30px;
-    }
-    &:nth-child(4n + 1) {
-      margin-left: 0;
-    }
-    &:nth-child(n + 5) {
-      margin-top: 1.9rem; // Calculated by getting the height of the footer of a card
-    }
+    width: calc((100% / 4) - 15px);  // so as to be left with grid-gutter-size space between
   }
   @include col-md-only {
-    width: calc((100% / 3) - 11.25px); // so as to be left with 1/2 grid-gutter-size space between
-    &:nth-child(3n + 1) {
-      margin-left: 0;
-    }
-    &:nth-child(n + 4) {
-      margin-top: 1.9rem; // Calculated by getting the height of the footer of a card
-    }
+    width: calc((100% / 3) - 15px); // so as to be left with 1/2 grid-gutter-size space betwee
   }
   @include col-sm-down {
-    width: calc((100% / 2) - 7.5px); // so as to be left with 1/2 grid-gutter-size space between
-    &:nth-child(n + 2) {
-      margin-left: 15px;
-    }
-    &:nth-child(2n + 1) {
-      margin-left: 0;
-    }
-    &:nth-child(n + 3) {
-      margin-top: 1.9rem; // Calculated by getting the height of the footer of a card
-    }
+    width: calc((100% / 2) - 15px); // so as to be left with 1/2 grid-gutter-size space between
   }
   &:hover {
     .card-overlay {
@@ -67,6 +45,9 @@
       margin-left: -.5px;
       transform: translateY(100%);
       width: calc(100% + 1.5px);
+    }
+    .card-title {
+      color: $brand-primary;
     }
     .card-footer {
       opacity: 0;
@@ -98,20 +79,33 @@
 .card-body {
   background: url('/images/brick-wall-dark.png'), url('/images/brick-wall-dark.png'), url('/images/brick-wall-dark.png');
   bottom: 0;
-  color: $text-bright;
-  font-weight: 300;
   left: 0;
   padding: 2px 7px;
   position: absolute;
   text-align: center;
-  text-shadow: -.5px -.5px 0 darken($text-color, 50%);
   transition: .5s ease-in;
   width: 100%;
+  @include col-sm-down {
+    font-size: 1.05rem;
+    margin-bottom: 0;
+    padding: 2px;
+  }
   * {
     font-weight: 300;
   }
 }
 
+.card-title, .card-more-title {
+  color: $text-bright;
+  font-weight: 300;
+  @include col-md-down {
+    font-size: 1.2rem;
+  }
+  @include col-sm-down {
+    font-size: 1.05rem;
+    padding: 0px;
+  }
+}
 .card-overlay-item {
   align-items: center;
   background: $brand-primary;
@@ -143,10 +137,91 @@
   }
 }
 
-.card-footer {
+.card-footer, .card-more-footer {
   background-color: $brand-primary;
   color: darken($text-bright, 10%);
   padding: .2rem;
   text-align: right;
   transition: .2s .5s;
+}
+
+.card-more {
+  width: 100%;
+  margin-top: 5px;
+  @include col-sm-down {
+    width: calc((100% / 3) - 5px);
+    margin-left: 5px;
+  }
+  display: flex;
+  flex-direction: column;
+  background-color: $gray-800;
+  border-radius: $card-border-radius;
+
+  &-title {
+    padding: 2px 7px;
+    color: $text-bright;
+    text-align: center;
+  }
+  &:hover {
+    cursor: pointer;
+    background: $img-overlay;
+    .card-more-footer {
+      background-color: $brand-secondary;
+    }
+    .card-more-icon {
+      color: $brand-secondary;
+    }
+  }
+  * {
+    transition: all .3s;
+  }
+}
+
+// The products-popular
+.section-category-popular {
+  background-color: $gray-900;
+  height: 30%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.card-row--popular {
+  align-items: center;
+  height: 100%;
+  margin-left: -5px;
+  padding-bottom: 15px;
+  padding-top: 15px;
+  .card {
+    margin-top: 0;
+    margin-left: 5px; // divide it by the number of cards in the card-row
+    width: calc((100% / 5) - 5px);
+    height: calc(100% - (10px + 3.75rem));
+    @include col-sm-down {
+      width: calc((100% / 3) - 5px);
+      height: calc((100% / 2) - 10px);
+      &:nth-child(n + 4) {
+        margin-top: 5px;
+      }
+    }
+  }
+  .card-footer {
+    @include col-sm-down {
+      display: none;
+    }
+  }
+  .card-overlay-item {
+    height: 1.8rem;
+    width: 1.8rem;
+    &:hover {
+      & > * {
+        font-size: .8rem;
+      }
+    }
+    & + & {
+      margin-left: .3rem;
+    }
+    & > * {
+      font-size: .9rem;
+    }
+  }
 }

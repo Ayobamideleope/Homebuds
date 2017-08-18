@@ -49,24 +49,83 @@ body {
   // Also remember to make sure there is color compatability between the background and the content. Or use masked or filtered background
   .bg-img-rs {
     @include col-sm-down {
-      @include bg-img(true, bg-compose(#{'rgba($black, .5), '}, '') bg-compose(url("/images/product-growth-laptop.jpeg")));
+      @include bg-img(true, bg-compose('#{$img-overlay}, ', '') bg-compose(url("/images/product-growth-laptop.jpeg")));
     }
   }
+}
+
+.expand-business-teaser-details {
+  background-color: $white;
+  text-align: center;
+  & > div {
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+  }
+  .fa {
+    color: $brand-primary;
+    height: 4rem;
+    font-size: 4rem;
+    line-height: 1;
+    border-radius: 50%;
+  }
+}
+.media--teaser__txt .h {
+  flex: 1;
 }
 
 #section__register {
   &, .h {
     color: $text-bright;
   }
-      @include bg-img(true, bg-compose(#{'rgba(#{$black}, .5), '}, '') bg-compose(url("/images/product-growth-tablet.jpeg")));
+      @include bg-img(true, bg-compose('#{$img-overlay}, ', '') bg-compose(url("/images/product-growth-tablet.jpeg")));
 }
 
-.section__footer {
+.section--footer {
   background: lighten($black, 5%);
   color: $text-bright;
-  .text-link {
-    color: darken($text-bright, 10%);
+  ul {
+    list-style: none;
   }
+  .text-link, a {
+    color: darken($text-bright, 15%);
+    padding-top: .3rem;
+    padding-bottom: .2rem;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+}
+
+.footer-content {
+  padding-top: 3rem;
+  padding-bottom: 1rem;
+}
+
+.social-connect {
+  display: flex;
+  justify-content: space-around;
+  @include col-lg {
+    flex-direction: column;
+  }
+  i {
+    padding: .2rem;
+    border-radius: 30px;
+    & + & {
+      margin-left: .3rem;
+    }
+    &:hover {
+      color: $white;
+      background-color: $gray-800;
+    }
+  }
+}
+
+.social-links-list {
+  display: flex;
+padding-left: 0;
 }
 
 .footer-brand {
@@ -91,4 +150,5 @@ body {
   background-color: $brand-secondary;
   color: $text-bright;
   text-align: center;
+  padding: 1rem;
 }

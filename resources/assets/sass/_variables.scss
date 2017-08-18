@@ -60,7 +60,7 @@ $green:   #28a745;
 $cyan:    #17a2b8;
 
 $brand-primary: #ff5050;
-$brand-secondary: darken($brand-primary, 10%);
+$brand-secondary: darken($brand-primary, 5%);
 
 $theme-colors: (
         primary: $brand-primary,
@@ -107,8 +107,10 @@ $transition-collapse:    height .55s ease;
 // Fonts
 //
 // Font, line-height, and color for body text, headings, and more.
+//@import url('https://fonts.googleapis.com/css?family=Playfair+Display|Raleway');
 
 $font-family-serif: 'Playfair Display', serif;
+$font-family-base: 'Raleway', sans-serif;
 
 $font-size-base: .875rem; // `14px`
 $font-size-lg:   1.09rem; // `18px`
@@ -182,7 +184,9 @@ $text-color: #838b8f;
 $text-dark: darken($text-color, 30%);
 $text-bright: $white;
 
-$img-logo: '/images/homebuds-logo.jpg';
+$img-logo: '/images/favicon.fw.png';
+//$img-overlay: #{'linear-gradient(#{rgba($black, .5)}, #{rgba($black, .5)}), '};
+$img-overlay: linear-gradient(rgba($black, .5), rgba($black, .5));
 //
 // Media tiers
 $col-xs: 576px;

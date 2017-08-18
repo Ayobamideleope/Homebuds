@@ -1,10 +1,11 @@
 @import 'mixin';
 
 .navbar {
-  width: 100%;
-  flex-direction: row;
   align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
   justify-content: space-between;
+  width: 100%;
 }
 
 .navbar-brand {
@@ -15,7 +16,10 @@
   }
 
   &__txt {
-    color: $text-bright;
+    color: $brand-primary;
+    @include col-md {
+      display: inline-block !important;
+    }
   }
 }
 
@@ -74,15 +78,25 @@
 }
 
 #siteNavCont {
-  background-color: $brand-secondary;
+  background: $img-overlay;
   border: 1px solid $brand-primary;
-  border-top: 5px rgba($brand-primary, .5);
+  border-top: 5px solid rgba($brand-secondary, .5);
   display: none;
   margin-top: -4px;
   padding: 15px;
   position: absolute;
   right: 3%;
   top: 100%;
+  z-index: $zindex-dropdown;
+  .text-link {
+    &:link, &:visited {
+      color: $white;
+    }
+  }
+  .d-md-none{
+    border-top: $border-width solid $white;
+    margin-top: 1rem;
+  }
 }
 
 .navbar--btm {
@@ -90,13 +104,32 @@
   border-top: 1px solid $brand-primary;
   bottom: 0;
   box-shadow: 0 -4px 20px 5px rgba($text-bright, .3);
-  //display: none;
   flex-wrap: wrap;
-  opacity: 0;
   height: 60px;
   left: 0;
+  opacity: 0;
   position: fixed;
   z-index: 30;
+  @include col-sm-down {
+    padding: 0;
+    opacity: 0;
+  }
+}
+@include col-sm-down {
+  .navbar--btm__item{
+    padding-top: 2px;
+    padding-bottom: 2px;
+  &:first-child .btn, &:first-child .navbar--btm__toggle {
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    padding-left: 2px;
+  }
+  &:last-child .btn, &:last-child .navbar--btm__toggle {
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+    padding-right: 2px;
+  }
+}
 }
 
 .to-top {
